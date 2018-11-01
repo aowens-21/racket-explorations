@@ -10,15 +10,15 @@ map-row: (MAP-CHAR-TOKEN)+ /NEWLINE-TOKEN
 
 draw-block: /DRAW-TOKEN /NEWLINE-TOKEN (draw-rule)+
 
-draw-rule: ID /RULE-RESULT-TOKEN STRING-TOKEN /NEWLINE-TOKEN
+draw-rule: ID /RULE-RESULT-TOKEN STRING-TOKEN /(NEWLINE-TOKEN)?
 
 action-block: /ACTION-TOKEN ID /":" /NEWLINE-TOKEN (action-rule)+
 
-action-rule: STRING-TOKEN /RULE-RESULT-TOKEN /"(" NUM-TOKEN /"," NUM-TOKEN /")" /NEWLINE-TOKEN
+action-rule: STRING-TOKEN /RULE-RESULT-TOKEN /"(" NUM-TOKEN /"," NUM-TOKEN /")" /(NEWLINE-TOKEN)?
 
 interactions-block: /INTERACTIONS-TOKEN /NEWLINE-TOKEN (interaction-rule)+
 
-interaction-rule: (ID PUSH-TOKEN ID | ID STOP-TOKEN ID) /NEWLINE-TOKEN
+interaction-rule: (ID PUSH-TOKEN ID | ID STOP-TOKEN ID) /(NEWLINE-TOKEN)?
 
 win-block: /WIN-TOKEN /NEWLINE-TOKEN (win-rule)+
 
