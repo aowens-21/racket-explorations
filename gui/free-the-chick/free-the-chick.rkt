@@ -20,7 +20,7 @@
                                  (list "B" "B" "" "" "B" "" "" "B")
                                  (list "B" "B" "B" "B" "B" "B" "B" "B")))
 
-(define grid-contents (map (lambda (l) (list->vector l)) initial-grid-contents))
+(define grid-contents (map list->vector initial-grid-contents))
 
 (define chick-bitmap (read-bitmap "chick.jpg"))
 (define chick-pos (list 5 5))

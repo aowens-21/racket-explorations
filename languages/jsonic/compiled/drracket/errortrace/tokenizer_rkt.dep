@@ -1,1 +1,0 @@
-("7.0" ("40470992aff8c4b5a65cc6d0326cdabbf5390646" . "8e7f20a2f7a389c4df12cf60950e8a50d15ba9a6") (collects #"br" #"quicklang.rkt") (collects #"brag" #"support.rkt") (collects #"errortrace" #"errortrace-key.rkt") (collects #"racket" #"contract.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"rackunit" #"main.rkt"))

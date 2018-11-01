@@ -1,1 +1,0 @@
-("7.0" ("32999ceb1644e8ba8f85145d4a591ef740494fc1" . "e9d79e2e44d4e5d584a0359eed16ae41388f6d37") (collects #"br" #"quicklang.rkt") (collects #"errortrace" #"errortrace-key.rkt") (collects #"jsonic" #"parser.rkt") (collects #"jsonic" #"tokenizer.rkt") (collects #"racket" #"contract.rkt") (collects #"racket" #"runtime-config.rkt"))
