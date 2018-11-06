@@ -7,9 +7,12 @@
 (define window-height 500)
 (define rows 8)
 (define columns 8)
+(define size-offset 25)
+(define block-size (quotient (- window-width (* 2 size-offset)) rows))
 
 ; top left position of each grid square
-(define grid-positions (list 25 81 137 193 249 305 361 417))
+(define grid-positions (build-list rows (lambda (i)
+                                          (+ size-offset (* block-size i)))))
 
 (define initial-grid-contents (list (list "B" "B" "B" "B" "B" "B" "B" "B")
                                  (list "B" "B" "" "B" "B" "B" "B" "B")
@@ -80,7 +83,7 @@
   (for-each (lambda (x-draw grid-row)
               (for-each (lambda (y-draw grid-space)
                           (cond
-                            [(string=? grid-space "B") (send dc draw-rectangle x-draw y-draw 56 56)]
+                            [(string=? grid-space "B") (send dc draw-rectangle x-draw y-draw block-size block-size)]
                             [(string=? grid-space "C") (send dc draw-bitmap chick-bitmap x-draw y-draw)]
                             [(string=? grid-space "P") (send dc draw-bitmap player-bitmap x-draw y-draw)]))
                         grid-positions (vector->list grid-row)))

@@ -1,21 +1,20 @@
 #lang freechick
 
--- This takes care of map size, places
 START_MAP
-######
-##B###
-#B#BB#
-#B#CB#
-#BBBB#
-######
+#######
+#BBB###
+#BCB###
+##B####
+#######
+####P##
+#######
 END_MAP
 
 -- Takes care of where to draw things
 draw:
   "P" -> "player.png"
-  "C" -> "chick.png"
-  "B" -> "wall.png"
-  "W" -> "wall.png"
+  "C" -> "chick.jpg"
+  "B" -> "rect"
 
 -- Takes care of how to respond to key inputs
 action:
@@ -28,10 +27,4 @@ action:
 interactions:
   "P" push "B"
   "B" stop "B"
-  "B" stop "W"
-  "P" stop "W"
-  "B" stop "W"
-
--- Takes care of win conditions - maybe be more explicit with positions
-win:
-  "P" == "C"
+  "P" grab "C"

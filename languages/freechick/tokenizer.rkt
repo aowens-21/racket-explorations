@@ -8,15 +8,16 @@
       (lexer
         [(from/to "--" "\n") (next-token)]
         ["draw:" (token 'DRAW-TOKEN lexeme)]
-        [(:: "'" (:= 1 alphabetic) "'")
+        [(:: "\"" (:= 1 alphabetic) "\"")
          (token 'ID lexeme)]
         [(from/to "\"" "\"")
          (token 'STRING-TOKEN lexeme)]
-        ["action" (token 'ACTION-TOKEN)]
+        ["action:" (token 'ACTION-TOKEN)]
         ["win:" (token 'WIN-TOKEN)]
         ["interactions:" (token 'INTERACTIONS-TOKEN)]
         ["push" (token 'PUSH-TOKEN lexeme)]
         ["stop" (token 'STOP-TOKEN lexeme)]
+        ["grab" (token 'GRAB-TOKEN lexeme)]
         ["==" (token 'EQUALS-TOKEN lexeme)]
         ["\n" (token 'NEWLINE-TOKEN lexeme)]
         [whitespace (token lexeme #:skip? #t)]
