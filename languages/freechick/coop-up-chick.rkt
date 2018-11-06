@@ -1,20 +1,21 @@
 #lang freechick
 
 START_MAP
-BBBBBBBB
-BP#####B
-B######B
-B####BBB
-B###B##B
-B###B#CB
-B###B##B
-BBBBBBBB
+P#######
+##BBB###
+##BCB###
+##BBB###
+########
+########
+########
+#######T
 END_MAP
 
 -- Takes care of where to draw things
 draw:
   "P" -> "player.png"
   "C" -> "chick.jpg"
+  "T" -> "coop.jpg"
   "B" -> "rect"
 
 -- Takes care of how to respond to key inputs
@@ -27,9 +28,11 @@ action:
 -- Takes care of when player is trying to move into block position, will push
 interactions:
   "P" push "B"
-  "B" stop "B"
-  "P" grab "C"
+  "B" push "B"
+  "P" push "C"
+  "C" stop "B"
+  "C" grab "T"
 
 -- Takes care of win conditions - maybe be more explicit with positions
 win:
-  "P" == "C"
+  "C" == "T"
